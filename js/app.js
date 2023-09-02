@@ -4,7 +4,6 @@ let addButton = document.querySelector(".addButton");
 let toDoList = document.querySelector(".ToDoListContainer");
 let inputValue = document.querySelector("#inputTask");
 
-
 addButton.addEventListener("click", (e)=> {
     e.preventDefault();
 
@@ -34,7 +33,13 @@ addButton.addEventListener("click", (e)=> {
 
     const removeButton = task.querySelector(".trashButton");
     removeButton.addEventListener("click", ()=> {
-        task.remove();
+        task.classList.add("styleRemoveTask");
+
+        function removeTask () {
+            task.remove();
+        }
+
+        setInterval(removeTask, 500)
 
     })
 });

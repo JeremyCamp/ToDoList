@@ -141,7 +141,7 @@ i {
     background-color: rgb(20, 237, 20);
 }
 
-@keyframes animationToDo {
+@keyframes animationValidToDo {
     0% {
         margin-left: -70%;
         opacity: 0;
@@ -156,7 +156,27 @@ i {
 }
 
 .toDo {
-    animation-name: animationToDo;
+    animation-name: animationValidToDo;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animationRemoveToDo {
+    0% {
+        margin-right: 0%;
+        opacity: 1;
+    }
+    50% {
+        margin-right: 25%;
+    }
+    100% {
+        margin-right: -70%;
+        opacity: 0;
+    }
+}
+
+.styleRemoveTask {
+    animation-name: animationValidToDo;
     animation-duration: .5s;
     animation-timing-function: ease-in-out;
 }
