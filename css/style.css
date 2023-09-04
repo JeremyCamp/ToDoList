@@ -1,8 +1,34 @@
 * {
-    overflow: hidden;
     margin: 0;
     padding: 0;
     background-color: rgb(35, 211, 255);
+}
+
+.loader {
+    background-color: rgb(35, 211, 255);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loader span {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    background-color: rgb(35, 211, 255);
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+    text-shadow: grey 1px 1px 10px;
 }
 
 body {
@@ -141,6 +167,50 @@ i {
     background-color: rgb(20, 237, 20);
 }
 
+.footer {
+    margin-top: 2%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.identite {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.identite p {
+    height: 40%;
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px white;
+}
+
+span {
+    height: 40%;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+.links {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end; 
+}
+
+.links i {
+    font-size: 35px;
+}
+
 @keyframes animationValidToDo {
     0% {
         margin-left: -70%;
@@ -161,22 +231,116 @@ i {
     animation-timing-function: ease-in-out;
 }
 
+.styleRemoveTask {
+    animation-name: animationRemoveToDo;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+}
+
 @keyframes animationRemoveToDo {
     0% {
-        margin-right: 0%;
+        margin-right: -70%;
         opacity: 1;
     }
     50% {
         margin-right: 25%;
     }
     100% {
-        margin-right: -70%;
+        margin-right: 300%;
         opacity: 0;
     }
 }
 
-.styleRemoveTask {
-    animation-name: animationValidToDo;
-    animation-duration: .5s;
-    animation-timing-function: ease-in-out;
+.loadingAnimation {
+    animation-name: loaderAnimation;
+    animation-duration: 2.5s;
+}
+
+@keyframes loaderAnimation {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    95% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@keyframes toDoListWordAnimation {
+    0% {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    1% {
+        visibility: visible;
+    }
+    10% {
+        opacity: 1;
+        margin-left:  0%;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.toDoWord {
+    animation-name: toDoListWordAnimation;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in;
+
+}
+
+.webWord {
+    animation-name: webWordAnimation;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes webWordAnimation {
+    0% {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    1% {
+        visibility: visible;
+    }
+    10% {
+        opacity: 1;
+        margin-left:  0%;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.appWord {
+    animation-name: webWordAnimation;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes appWordAnimation {
+    0% {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    1% {
+        visibility: visible;
+    }
+    10% {
+        opacity: 1;
+        margin-left:  0%;
+    }
+    100% {
+        visibility: visible;
+    }
 }

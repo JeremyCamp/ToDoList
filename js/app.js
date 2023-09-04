@@ -3,6 +3,14 @@ let formulaire = document.querySelector("form");
 let addButton = document.querySelector(".addButton");
 let toDoList = document.querySelector(".ToDoListContainer");
 let inputValue = document.querySelector("#inputTask");
+let loader = document.querySelector(".loader");
+
+
+function loading () {
+    loader.classList.add("loadingAnimation") 
+}
+setTimeout(loading,500) 
+
 
 addButton.addEventListener("click", (e)=> {
     e.preventDefault();
@@ -40,7 +48,6 @@ addButton.addEventListener("click", (e)=> {
         }
 
         setInterval(removeTask, 500)
-
     })
-});
+})
 
