@@ -9,7 +9,7 @@ let loader = document.querySelector(".loader");
 function loading () {
     loader.classList.add("loadingAnimation") 
 }
-setTimeout(loading,500) 
+setTimeout(loading) 
 
 
 addButton.addEventListener("click", (e)=> {
@@ -49,5 +49,7 @@ addButton.addEventListener("click", (e)=> {
 
         setInterval(removeTask, 500)
     })
+
+    localStorage.setItem()
 })
 
