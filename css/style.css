@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: rgb(35, 211, 255);
+    overflow: hidden;
 }
 
 *:focus {
